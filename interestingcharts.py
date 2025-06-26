@@ -24,7 +24,7 @@ SUPABASE_URL = "https://obwwflnrapkulpakklab.supabase.co"
 
 # Get database URL from environment variable. Use the direct connection for local dev, and the pooler for deployment.
 # On Streamlit Cloud, set the DATABASE_URL secret to your *Connection Pooling* URI from Supabase.
-DATABASE_URL = os.getenv('DATABASE_URL', "postgresql://postgres:Nejri0-xyxwoh-cygtus@aws-0-eu-central-2.pooler.supabase.com:6543/postgres")
+DATABASE_URL = os.getenv('DATABASE_URL', "postgresql://postgres.obwwflnrapkulpakklab:Nejri0-xyxwoh-cygtus@aws-0-eu-central-2.pooler.supabase.com:6543/postgres?gssencmode=disable")
 #print(DATABASE_URL)postgresql://postgres.obwwflnrapkulpakklab:[YOUR-PASSWORD]@aws-0-eu-central-2.pooler.supabase.com:6543/postgres
 # Check if password placeholder needs to be replaced
 if '[YOUR-PASSWORD]' in DATABASE_URL:
@@ -346,7 +346,7 @@ if 'db_initialized' not in st.session_state:
 
 # Streamlit UI
 st.title('Swiss House Search Helper')
-st.set_page_config(page_title="Swiss House Search Helper", layout="wide")
+st.set_page_config(page_title='Swiss House Search Helper', layout='wide')
 
 # Load reference data from static Excel file
 if 'reference_data' not in st.session_state:
