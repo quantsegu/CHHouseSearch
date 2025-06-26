@@ -1,6 +1,8 @@
 streamlit
 pandas
 openpyxl
+psycopg2-binary
 duckdb
 requests
 BeautifulSoup4
+python-dotenv
