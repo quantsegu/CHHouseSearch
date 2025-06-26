@@ -21,13 +21,25 @@ ORS_API_KEY = '5b3ce3597851110001cf62485d56c2c7ec274494b89bfae6e9b20178'  # Set 
 
 # Supabase Database Configuration
 SUPABASE_URL = "https://obwwflnrapkulpakklab.supabase.co"
-# Get database URL from environment variable or use placeholder
+
+# Get database URL from environment variable. Use the direct connection for local dev, and the pooler for deployment.
+# On Streamlit Cloud, set the DATABASE_URL secret to your *Connection Pooling* URI from Supabase.
 DATABASE_URL = os.getenv('DATABASE_URL', "postgresql://postgres:Nejri0-xyxwoh-cygtus@db.obwwflnrapkulpakklab.supabase.co:5432/postgres")
 print(DATABASE_URL)
 # Check if password placeholder needs to be replaced
 if '[YOUR-PASSWORD]' in DATABASE_URL:
     st.error("Please set your Supabase database password in the DATABASE_URL environment variable or update the code with your actual password.")
     st.stop()
+
+st.info("""
+**Note for Streamlit Cloud Deployment:**
+This app is configured to connect to a Supabase database. For successful deployment, you must set the `DATABASE_URL` secret in your Streamlit Cloud settings to the **Connection Pooling** URI provided by Supabase.
+
+You can find this in your Supabase Dashboard under:
+**Project Settings -> Database -> Connection string -> URI (while "Use connection pooling" is checked).**
+
+The pooling URI typically uses port **6543**.
+""")
 
 # Helper: Clear add form fields
 def clear_add_fields():
