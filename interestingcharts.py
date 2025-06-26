@@ -24,8 +24,8 @@ SUPABASE_URL = "https://obwwflnrapkulpakklab.supabase.co"
 
 # Get database URL from environment variable. Use the direct connection for local dev, and the pooler for deployment.
 # On Streamlit Cloud, set the DATABASE_URL secret to your *Connection Pooling* URI from Supabase.
-DATABASE_URL = os.getenv('DATABASE_URL', "postgresql://postgres:Nejri0-xyxwoh-cygtus@db.obwwflnrapkulpakklab.supabase.co:5432/postgres")
-print(DATABASE_URL)
+DATABASE_URL = os.getenv('DATABASE_URL', "postgresql://postgres:Nejri0-xyxwoh-cygtus@aws-0-eu-central-2.pooler.supabase.com:6543/postgres")
+#print(DATABASE_URL)postgresql://postgres.obwwflnrapkulpakklab:[YOUR-PASSWORD]@aws-0-eu-central-2.pooler.supabase.com:6543/postgres
 # Check if password placeholder needs to be replaced
 if '[YOUR-PASSWORD]' in DATABASE_URL:
     st.error("Please set your Supabase database password in the DATABASE_URL environment variable or update the code with your actual password.")
