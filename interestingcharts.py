@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 DB_FILE = 'interestingcharts.duckdb'
 TABLE_NAME = 'data'
 MAINTAINED_TABLE = 'interested_items'
-STATIC_EXCEL_FILE = '/Users/lakshmisegu/Programming/interestingcharts.py/test.xlsx'  # Set this to your Excel file path, e.g., 'mydata.xlsx'
+STATIC_EXCEL_FILE = 'test.xlsx'  # Set this to your Excel file path, e.g., 'mydata.xlsx'
 ALLOWED_STATUSES = ['interested', 'contacted', 'reviewed', 'visited', 'confirmed', 'delete']
 ZURICH_HB_COORDS = (47.378177, 8.540192)  # Zurich HB lat, lon
 ORS_API_KEY = '5b3ce3597851110001cf62485d56c2c7ec274494b89bfae6e9b20178'  # Set your OpenRouteService API key as an environment variable
